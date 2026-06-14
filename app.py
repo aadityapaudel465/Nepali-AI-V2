@@ -102,7 +102,7 @@ if prompt:
 
     response = model.generate_content(system_prompt)
 
-reply = response.text
+    reply = response.text
 
 st.write("### 🤖 Nepali AI")
 st.write(reply)
