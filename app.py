@@ -70,6 +70,6 @@ User Message:
 """
     response = model.generate_content(system_prompt)
 
-reply = response.text
+    reply = response.text
 
-st.write("AI:", reply)
+    st.write("AI:", reply)
