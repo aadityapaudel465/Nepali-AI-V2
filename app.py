@@ -100,7 +100,7 @@ if prompt:
     ...
     """
 
-response = model.generate_content(system_prompt)
+    response = model.generate_content(system_prompt)
 
 reply = response.text
 
