@@ -1,10 +1,23 @@
 import streamlit as st
+import google.generativeai as genai
+
+st.set_page_config(
+    page_title="Nepali AI",
+    layout="wide"
+)
+
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 st.title("🇳🇵 Nepali AI")
+st.write("Developed by Aaditya Paudel")
 
-name = st.text_input("Enter your name")
+prompt = st.chat_input("Ask me anything...")
 
-if name:
-    st.success(f"Namaste, {name}!")
+if prompt:
+    st.write("You:", prompt)
 
-st.write("My first Streamlit app is working!")
+    response = model.generate_content(prompt)
+
+    st.write("AI:", response.text)
