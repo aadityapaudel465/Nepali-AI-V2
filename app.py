@@ -41,7 +41,7 @@ prompt = st.chat_input("Ask me anything...")
 
 if prompt:
 
-system_prompt = f"""
+    system_prompt = f"""
 
 You are Nepali AI, a helpful, friendly, and intelligent AI assistant.
 
