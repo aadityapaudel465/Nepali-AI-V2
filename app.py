@@ -95,6 +95,7 @@ User Message:
 if prompt:
 
     system_prompt = f"""
+   
     """
 
     response = model.generate_content(system_prompt)
