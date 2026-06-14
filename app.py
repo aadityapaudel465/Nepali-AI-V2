@@ -6,41 +6,46 @@ st.set_page_config(
     layout="wide"
 )
 
+# Gemini API
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 
 model = genai.GenerativeModel("gemini-2.5-flash")
 
+# Title
 st.title("🇳🇵 Nepali AI")
-st.write("Developed by Aaditya Paudel")
+st.write("Developed by Aaditya Paudel (AS KNOWN AS XXOOO)")
 
 # Sidebar
 with st.sidebar:
     st.title("🇳🇵 Nepali AI")
-    st.write("Developer: Aaditya Paudel known as XXOOO")
+    st.write("Developer: Aaditya Paudel (AS KNOWN AS XXOOO)")
 
     if st.button("🗑️ Clear Chat"):
         st.session_state.messages = []
         st.rerun()
 
-# Chat history
+# Chat History
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Show previous messages
+# Display Previous Messages
 for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
+    avatar = "👤" if message["role"] == "user" else "logo.png"
+
+    with st.chat_message(message["role"], avatar=avatar):
         st.write(message["content"])
 
-# User input
+# User Input
 prompt = st.chat_input("Ask me anything...")
 
 if prompt:
 
+    # Save User Message
     st.session_state.messages.append(
         {"role": "user", "content": prompt}
     )
 
-    with st.chat_message("user"):
+    with st.chat_message("user", avatar="👤"):
         st.write(prompt)
 
     system_prompt = f"""
@@ -56,7 +61,13 @@ If anyone asks:
 
 Always answer:
 
-"I was developed by Aaditya Paudel known as xxoo."
+"I was developed by Aaditya Paudel."
+
+You may also say:
+
+"Nepali AI was created by Aaditya Paudel."
+
+Never say you don't know who created you.
 
 User: {prompt}
 """
@@ -66,9 +77,10 @@ User: {prompt}
 
     reply = response.text
 
+    # Save AI Message
     st.session_state.messages.append(
         {"role": "assistant", "content": reply}
     )
 
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar="logo.png"):
         st.write(reply)
