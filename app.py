@@ -2,8 +2,8 @@ import streamlit as st
 import google.generativeai as genai
 
 st.set_page_config(
-page_title="Nepali AI",
-layout="wide"
+    page_title="Nepali AI",
+    layout="wide"
 )
 
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
@@ -16,7 +16,7 @@ prompt = st.chat_input("Ask me anything...")
 
 if prompt:
 
-system_prompt = f"""
+    system_prompt = f"""
 
 You are Nepali AI, a helpful, friendly, and intelligent AI assistant.
 
