@@ -12,7 +12,6 @@ model = genai.GenerativeModel("gemini-2.5-flash")
 
 st.title("🇳🇵 Nepali AI")
 
-prompt = st.chat_input("Ask me anything...")
 
 if prompt:
 
