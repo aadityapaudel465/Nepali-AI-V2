@@ -73,3 +73,18 @@ User Message:
     reply = response.text
 
     st.write("AI:", reply)
+prompt = st.chat_input("Ask me anything...")# Logo on top
+st.image("logo.png", width=120)
+
+st.title("🇳🇵 Nepali AI")
+st.write("Developed by Aaditya Paudel (XXOOO)")
+
+# Sidebar
+with st.sidebar:
+    st.image("logo.png", width=120)
+    st.title("🇳🇵 Nepali AI")
+    st.write("Developer: Aaditya Paudel")
+    st.write("Also known as: XXOOO")
+
+    if st.button("🗑️ Clear Chat"):
+        st.rerun()
