@@ -104,5 +104,5 @@ response = model.generate_content(system_prompt)
 
 reply = response.text
 
-    st.write("### 🤖 Nepali AI")
-    st.write(reply)
+st.write("### 🤖 Nepali AI")
+st.write(reply)
