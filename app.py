@@ -73,7 +73,8 @@ User Message:
     reply = response.text
 
     st.write("AI:", reply)
-prompt = st.chat_input("Ask me anything...")# Logo on top
+prompt = st.chat_input("Ask me anything...")
+# Logo on top
 st.image("logo.png", width=120)
 
 st.title("🇳🇵 Nepali AI")
