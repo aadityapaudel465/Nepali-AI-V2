@@ -24,17 +24,14 @@ st.title("🇳🇵 Nepali AI")
 st.write("Developed by Aaditya Paudel (XXOOO)")
 
 # Sidebar
-
 with st.sidebar:
-st.image("logo.png", width=120)
-st.title("🇳🇵 Nepali AI")
-st.write("Developer: Aaditya Paudel")
-st.write("Also known as: XXOOO")
+    st.image("logo.png", width=120)
+    st.title("🇳🇵 Nepali AI")
+    st.write("Developer: Aaditya Paudel")
+    st.write("Also known as: XXOOO")
 
-```
-if st.button("🗑️ Clear Chat"):
-    st.rerun()
-```
+    if st.button("🗑️ Clear Chat"):
+        st.rerun()
 
 # Chat Input
 
@@ -44,9 +41,7 @@ prompt = st.chat_input("Ask me anything...")
 
 if prompt:
 
-```
 system_prompt = f"""
-```
 
 You are Nepali AI, a helpful, friendly, and intelligent AI assistant.
 
@@ -99,11 +94,9 @@ User Message:
 {prompt}
 """
 
-```
 response = model.generate_content(system_prompt)
 
 reply = response.text
 
 st.write("### 🤖 Nepali AI")
 st.write(reply)
-```
