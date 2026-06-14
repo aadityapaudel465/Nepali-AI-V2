@@ -91,6 +91,8 @@ About Nepali AI:
 Nepali AI is an AI assistant developed by Aaditya Paudel (XXOOO).
 
 User Message:
+{prompt}
+ """
 
 if prompt:
 
