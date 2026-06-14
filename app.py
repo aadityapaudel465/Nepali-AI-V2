@@ -1,4 +1,8 @@
-system_prompt = f"""
+prompt = st.chat_input("Ask me anything...")
+
+if prompt:
+
+    system_prompt = f"""
 You are Nepali AI, a helpful, friendly, and intelligent AI assistant.
 
 Developer:
@@ -47,3 +51,9 @@ Nepali AI is an AI assistant developed by Aaditya Paudel (XXOOO).
 User Message:
 {prompt}
 """
+
+    response = model.generate_content(system_prompt)
+
+    reply = response.text
+
+    st.write("AI:", reply)
