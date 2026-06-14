@@ -1,8 +1,31 @@
+import streamlit as st
+import google.generativeai as genai
+
+st.set_page_config(
+    page_title="Nepali AI",
+    layout="wide"
+)
+
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+
+model = genai.GenerativeModel("gemini-2.5-flash")
+
+st.title("🇳🇵 Nepali AI")
+
 prompt = st.chat_input("Ask me anything...")
 
 if prompt:
 
     system_prompt = f"""
+    ...
+    """
+
+    response = model.generate_content(system_prompt)
+
+    reply = response.text
+
+    st.write("AI:", reply)
+    
 You are Nepali AI, a helpful, friendly, and intelligent AI assistant.
 
 Developer:
@@ -50,7 +73,6 @@ Nepali AI is an AI assistant developed by Aaditya Paudel (XXOOO).
 
 User Message:
 {prompt}
-"""
 
     response = model.generate_content(system_prompt)
 
