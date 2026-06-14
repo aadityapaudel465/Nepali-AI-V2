@@ -91,12 +91,16 @@ About Nepali AI:
 Nepali AI is an AI assistant developed by Aaditya Paudel (XXOOO).
 
 User Message:
-{prompt}
-"""
 
-response = model.generate_content(system_prompt)
+if prompt:
+
+    system_prompt = f"""
+    ...
+    """
+
+    response = model.generate_content(system_prompt)
 
 reply = response.text
 
-st.write("### 🤖 Nepali AI")
-st.write(reply)
+    st.write("### 🤖 Nepali AI")
+    st.write(reply)
